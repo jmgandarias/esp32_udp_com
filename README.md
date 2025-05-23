@@ -15,7 +15,37 @@ The ESP32 sends UDP packets at a frequency of **1 kHz** using **FreeRTOS**, and 
 
 ## Hardware
 - ESP32 WT32-ETH01
+
+![ESP32_WT32-ETH01](images/ESP32_WT32-ETH01.png)
+
+- CP2102 USB to TTL
+
+![CP2102](images/CP2102.png)
+
+
+## Software
 - Ubuntu 22.04
+- Arduino IDE 2.3.6
+- ESP32 board in Arduino IDE: ESP32 by espressif 3.2.0
+- Arduino library: WebServer_WT32_ETH01 1.5.1
+
+When using that library, go to :  and change
+
+```cpp
+#if ESP32
+  #warning Using ESP32 architecture for WebServer_WT32_ETH01
+  #define BOARD_NAME      "WT32-ETH01"
+#else  
+```
+
+to:
+```cpp
+#if defined(ESP32)
+  #warning Using ESP32 architecture for WebServer_WT32_ETH01
+  #define BOARD_NAME      "WT32-ETH01"
+#else  
+```
+
 
 ---
 
