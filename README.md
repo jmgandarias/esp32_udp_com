@@ -81,3 +81,9 @@ to:
    ```bash
    ip a
    ```
+
+
+## Test UDP communicatio at 1KHz
+- Flash the script esp32_udp_sender.
+- Open one terminal and run the python script `udp_sender.py`
+- Open one terminal and run the python script `udp_receiver.py`
